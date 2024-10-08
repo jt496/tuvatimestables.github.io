@@ -1,5 +1,5 @@
 //global vars for user choices -- all should be read from cookie if found
-var triedcookie = false;
+var triedcookie = true;
 var numbers = [];
 var ops = []
 var plus = 0;
@@ -78,11 +78,11 @@ function setquestions(){
 	numbers.push(parseInt((this).id.substring(5)));
     });
     numbersstr=numbers.join(",");
-    if(username!=null&&username!=""){
-	setCookie("numbers"+username,numbersstr,365);
-	setCookie("level"+username,level,365);
-	setCookie("ops"+username,opsstr,365);
-    }
+    // if(username!=null&&username!=""){
+	// setCookie("numbers"+username,numbersstr,365);
+	// setCookie("level"+username,level,365);
+	// setCookie("ops"+username,opsstr,365);
+    // }
     if((plus||minus)&&($(".numb.clicked").not(".smallnumb").length===0)){
 	$(".numb").not('.smallnumb').addClass("clicked");
     }
@@ -339,11 +339,11 @@ function choice(){
 function gameplay(){
   
     changepage("#gameplay");
-    if(username!=null&&username!=""){
-	setCookie("level"+username,level,365);
-	setCookie("numbers"+username,numbers.join(","),365);
-	setCookie("ops"+username,ops.join(","),365);
-    }
+    // if(username!=null&&username!=""){
+	// setCookie("level"+username,level,365);
+	// setCookie("numbers"+username,numbers.join(","),365);
+	// setCookie("ops"+username,ops.join(","),365);
+    // }
     setquestions();
     setInterval(updateTime, 66); // every 15th second call updateTime 
     gamereset();
@@ -521,13 +521,13 @@ function displayRes(results){
 }
 
 function changeuser(){
-    triedcookie=false;
+//    triedcookie=false;
 //added
     changepage("#welcome");
     $("#records").remove();
-    username=""
-    setCookie("username",username,365);
-    checkCookie();
+    username="Tuva"
+    // setCookie("username",username,365);
+    // checkCookie();
 }
 
 
@@ -555,34 +555,34 @@ function getCookie(c_name){
     return "Tuva";
 }
 
-function setCookie(c_name,value,exdays){
-    var exdate=new Date();
-    exdate.setDate(exdate.getDate() + exdays);
-    var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
-    document.cookie=c_name + "=" + c_value + ";domain=.tuva.org.uk;path=/";
-    document.cookie=c_name + "=" + c_value + ";domain=127.0.1.1;path=/";
-    document.cookie=c_name + "=" + c_value + ";domain=192.168.0.3;path=/";
-    document.cookie=c_name + "=" + c_value + ";domain=192.168.0.2;path=/";
-}
+// function setCookie(c_name,value,exdays){
+//     var exdate=new Date();
+//     exdate.setDate(exdate.getDate() + exdays);
+//     var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+//     document.cookie=c_name + "=" + c_value + ";domain=.tuva.org.uk;path=/";
+//     document.cookie=c_name + "=" + c_value + ";domain=127.0.1.1;path=/";
+//     document.cookie=c_name + "=" + c_value + ";domain=192.168.0.3;path=/";
+//     document.cookie=c_name + "=" + c_value + ";domain=192.168.0.2;path=/";
+// }
 
 function setname(){
-    username=$("#namebox").val();
-    username=username.toLowerCase();
-    username = username.replace(/ /g,'');
-    if(username !=null && username !="" && username.length<30){
-	triedcookie=true;
-	setCookie("username",username,365);
-//	choice();
-//	checkCookie();
-    }
-    else $("#namebox").val("");
+    username="Tuva"//$("#namebox").val();
+//     username=username.toLowerCase();
+//     username = username.replace(/ /g,'');
+//     if(username !=null && username !="" && username.length<30){
+// 	triedcookie=true;
+// //	setCookie("username",username,365);
+// //	choice();
+// //	checkCookie();
+//     }
+//     else $("#namebox").val("");
 }
 
 function checkCookie(){
     if(!triedcookie) username=getCookie("username");
     if ((username==null || username=="")&&!triedcookie)
     {
-	getname="<div id='records'><p style='color:#FF0000;text-align:center;'>Please enter a username:</p><div style='text-align:center'><input type='text' class='inputbox' id='namebox'  style='width:250px;'/><p>(This is only needed so you can see your results later. Your results are only stored on your computer.)</p><button id='namebut' onClick='setname()' style='display:none' >Go!</button></div></div>";
+//	getname="<div id='records'><p style='color:#FF0000;text-align:center;'>Please enter a username:</p><div style='text-align:center'><input type='text' class='inputbox' id='namebox'  style='width:250px;'/><p>(This is only needed so you can see your results later. Your results are only stored on your computer.)</p><button id='namebut' onClick='setname()' style='display:none' >Go!</button></div></div>";
 	$("#welcome").html(getname);
 	$("#namebox").focus();
 	$("#namebox").keydown(function(event){
@@ -668,15 +668,15 @@ function oldfinished(){
 	    $("#results").prepend("<p>New personal best!</p>");
 	    oldresarray[p+1]=timetaken.toFixed(1);
 	    results=oldresarray.join(":");
-	    setCookie("results"+username,results,365);
+	 //   setCookie("results"+username,results,365);
 	}
 	if(p<0){
 	    results=oldresults+":"+current+":"+timetaken.toFixed(1);
-	    setCookie("results"+username,results,365);
+	 //   setCookie("results"+username,results,365);
 	}
     }
     else{
 	results=current+":"+timetaken.toFixed(1);
-	setCookie("results"+username,results,365);
+	//setCookie("results"+username,results,365);
     }
 }
