@@ -573,7 +573,7 @@ function setname(){
 	triedcookie=true;
 	setCookie("username",username,365);
 //	choice();
-	checkCookie();
+//	checkCookie();
     }
     else $("#namebox").val("");
 }
