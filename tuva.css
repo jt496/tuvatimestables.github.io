@@ -1,0 +1,199 @@
+body
+{
+color:cyan;
+font-size:40px;
+font-family:Arial,Helvetica,sans-serif;
+background-color:black;
+border:0px;
+margin:0px;
+padding:0px;
+} 
+
+
+.page{
+width:400px;
+display:none;
+margin:auto;
+margin-top:20px;
+text-align:center;
+}
+
+
+.numbrow{
+width:240px;
+margin:auto;
+clear:both;
+}
+
+.numb,.symb{
+width:60px;
+height:60px;
+line-height:60px;
+float:left;
+color:blue;
+cursor:pointer;
+}
+.smallnumb{
+    font-size:20px;
+}
+
+#resultdetails{
+font-size:20px;
+}
+.clickable{
+cursor:pointer;
+}
+
+
+.left {
+  float: left;
+  text-align:left;
+}
+
+.right {
+  float: right;
+  text-align:right;
+}
+
+
+.textrow{
+padding: 2px 0px 2px 0px;
+}
+
+.inputbox
+{
+width:100px;
+font-size:40px;
+text-align:center;
+color:orange;
+font-family:Arial,Helvetica,sans-serif;
+background-color:transparent;
+border: 1px solid yellow;
+padding: 1px 0px 1px 0px;
+}
+
+#outeranswerbox
+{
+width:100px;
+border: 1px solid yellow;
+padding: 1px 0px 1px 0px;
+z-index:2;
+}
+
+
+#leveldiv{
+color:orange;
+clear:both;
+}
+
+
+#levelchoice{
+margin-left:10px;
+width:60px;
+font-size:40px;
+color:lawngreen;
+border:0px;
+}
+
+.ui-spinner{
+cursor:pointer;
+color:yellow;
+}
+#changebut,#changeplayer{
+color:blue;
+cursor:pointer;
+text-align:center;
+}
+
+#choicedone,#restart, #recordbut,#replaybut{
+cursor:pointer;
+color:magenta;
+text-align:center;
+}
+
+
+#results{
+text-align:left;
+}
+
+
+#score{
+color:#00FF00
+}
+
+#comment{
+color:yellow;
+}
+
+button{
+border:20px;
+height:44px;
+line-height:38px;
+font-size:38px;
+width:120px;
+background-color:yellow;
+cursor:pointer;
+}
+
+
+
+
+.prog {
+    width:30px;
+    height:30px;
+    line-height:30px;
+    float:left;
+    font-size:18px;
+}
+
+.progbord {
+    width:30px;
+    height:30px;
+    line-height:30px;
+    float:left;
+    font-size:20px;
+    color:yellow;
+    text-align:center;
+}
+
+.progrow {
+width:390px;
+height:30px;
+border:1px solid black;
+}
+
+
+
+.clicked{
+color:red;
+}
+
+
+#records{
+font-size:30px;
+color:green;
+text-align:left;
+}
+
+.trow{
+clear:both;
+}
+
+.tt{
+width:60px;
+height:50px;
+font-size:40px;
+position:relative;
+color:blue;
+cursor:pointer;
+}
+
+.ui-spinner{
+cursor:pointer;
+color:yellow;
+}
+
+#levelp{
+clear:both;
+height:60px;
+}

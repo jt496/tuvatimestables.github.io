@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<title> Tuva's Times Tables...</title>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="tuva.css" />
+</head>
+<body onload="checkCookie()">
+
+<div id="sum"></div>
+<div id="levelp" style="visibility:hidden;"><font style="color:#FF0000">Level?</font>
+  <input class="box" value="5" type="number" min="1" max="10" id="levelchoice" style="border: 0; color: #f6931f;" autocomplete="off"/>
+</div>
+<div id="answer" style="visibility:hidden;">
+<input type="text" class="box" id="answerbox" onkeyup="checkNumb()" style="display:none;"/>
+<button id="answerbut" onclick="Question()">Play</button></div>
+<div id="comment" style="visibility:hidden">&nbsp;</div>
+<div id="score" color="#FFFF00">&nbsp;</div>
+<div id="progress"></div>
+
+<script src="t.js">
+</script>
+
+
+</body>
+</html>
