@@ -180,7 +180,7 @@ function initialize(){
     gridstr+="<div class='numbrow' id='symbrow'><div id='plusminus' class='symbpair'><div class='symb' id='plus'>+</div><div class='symb' id='minus'>&#8722</div></div><div id='timesdivide' class='symbpair'><div class='symb' id='times'>&times</div><div class='symb' id='divide'>&divide</div></div></div>";
     gridstr+="<div  id='leveldiv'>Level<input class='inputbox' type='tel'id='levelchoice' value='"+level+"'/></div>";
     gridstr+="<div id='choicedone' onClick='gameplay()'>Play</div>";
-    gridstr+="<div id='changebutchoice' onclick='changeuser()' style='color:cyan;font-size:15px;cursor:pointer;'>New Player?</div>";
+//    gridstr+="<div id='changebutchoice' onclick='changeuser()' style='color:cyan;font-size:15px;cursor:pointer;'>New Player?</div>";
     $("#choice").html(gridstr);
     $("#choicedone").focus();
 
@@ -455,7 +455,7 @@ function displayRes(results){
     $("#results").hide();
     $("#welcome").text("");
     changepage("#welcome");
-    var prefix = "Times tables ";
+    var prefix = ""//"Times tables ";
     var resstr=""
     if(results!=""&&results!=null){
 	restr="<div id='records'><p style='color:#FF0000;text-align:center;'>Welcome back "+capital(username)+"</p>";
@@ -464,7 +464,7 @@ function displayRes(results){
 	resstr="<div id='records'><p style='color:#FF0000;text-align:center;'>Hello "+capital(username)+"</p>";
     }
     resstr+="<div id='recordbut' onclick='choice()'>Play</div>";
-    resstr+="<div id='changebut' onclick='changeuser()'>New Player?</div>";
+//    resstr+="<div id='changebut' onclick='changeuser()'>New Player?</div>";
     if(results!==null && results!=""){
 	var newresults=results.replace(/ddd/gi,"ttu");
 	var resarray=newresults.split(":");
@@ -476,9 +476,9 @@ function displayRes(results){
 	indres.sort();
 	indstr=indres.join(":");
 	resarray=indstr.split(":");
-	resstr="<div id='records'><p style='color:#FF0000;text-align:center;'>"+capital(username)+"'s records:</p>";
-	resstr+="<div id='recordbut' onclick='choice()'>Play</div>";
-	resstr+="<div id='changebut' onclick='changeuser()'>New Player?</div>";
+//	resstr="<div id='records'><p style='color:#FF0000;text-align:center;'>"+capital(username)+"'s records:</p>";
+//	resstr+="<div id='recordbut' onclick='choice()'>Play</div>";
+	// resstr+="<div id='changebut' onclick='changeuser()'>New Player?</div>";
 	for (var i=0;i<resarray.length/2;i++){
 	    var cur=resarray[2*i].split(",");
 	    curpre=cur.shift();
@@ -512,7 +512,7 @@ function displayRes(results){
 		resstr+=nextnumb;
 		resstr+=", ";
 	    }
-	    resstr=resstr+" on level "+cur[0]+". Time: "+resarray[2*i+1]+"<br>";
+//	    resstr=resstr+" on level "+cur[0]+". Time: "+resarray[2*i+1]+"<br>";
 	}
     }
     resstr+="</div>";
@@ -532,27 +532,27 @@ function changeuser(){
 
 
 function getCookie(c_name){
-    var c_value = document.cookie;
-    var c_start = c_value.indexOf(" " + c_name + "=");
-    if (c_start == -1)
-    {
-	c_start = c_value.indexOf(c_name + "=");
-    }
-    if (c_start == -1)
-    {
-	c_value = null;
-    }
-    else
-    {
-	c_start = c_value.indexOf("=", c_start) + 1;
-	var c_end = c_value.indexOf(";", c_start);
-	if (c_end == -1)
-	{
-	    c_end = c_value.length;
-	}
-	c_value = unescape(c_value.substring(c_start,c_end));
-    }
-    return c_value;
+    // var c_value = document.cookie;
+    // var c_start = c_value.indexOf(" " + c_name + "=");
+    // if (c_start == -1)
+    // {
+	// c_start = c_value.indexOf(c_name + "=");
+    // }
+    // if (c_start == -1)
+    // {
+	// c_value = null;
+    // }
+    // else
+    // {
+	// c_start = c_value.indexOf("=", c_start) + 1;
+	// var c_end = c_value.indexOf(";", c_start);
+	// if (c_end == -1)
+	// {
+	//     c_end = c_value.length;
+	// }
+	// c_value = unescape(c_value.substring(c_start,c_end));
+    // }
+    return "Tuva";
 }
 
 function setCookie(c_name,value,exdays){
