@@ -26,7 +26,19 @@
 <script src="tuva.js">
 </script>
 <script> 
-welcome();
+if(window.location.search.indexOf("QuickStart") !== -1){
+    level = 10;
+    numbers = [1,2,3,4,5,6,7,8,9,10,11,12];
+    ops = [0,0,1,0];
+    times = 1; plus = 0; minus = 0; divide = 0;
+    init = initialize();
+    $("#levelchoice").val(10);
+    $(".numb").addClass("clicked");
+    $("#times").addClass("clicked");
+    gameplay();
+} else {
+    welcome();
+}
 </script>
 
 </body>
